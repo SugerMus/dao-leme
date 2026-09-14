@@ -1,0 +1,10 @@
+{
+  "name": "导了么",
+  "short_name": "导了么",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f9",
+  "theme_color": "#f6f7f9",
+  "lang": "zh-CN",
+  "description": "本地每日记录工具"
+}
