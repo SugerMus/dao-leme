@@ -63,9 +63,9 @@ app/src/main/res/        Android 资源
 
 Release APK 下载地址：
 
-<https://github.com/SugerMus/dao-leme/releases/tag/v1.0.0>
+<https://github.com/SugerMus/dao-leme/releases/tag/v1.2.0>
 
-当前版本：`1.0.0`（versionName `1.0`，versionCode `1`）。
+当前版本：`1.2.0`（versionName `1.2`，versionCode `2`）。
 
 ## 联系作者
 

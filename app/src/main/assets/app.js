@@ -89,7 +89,7 @@ function renderSettings() {
   if (settingsPage === 'about') return renderAboutSettings();
   return `<section class="page"><div class="section-heading"><div><p class="eyebrow">本地偏好</p><h2>设置</h2></div></div>
     <div class="settings-card">${settingsEntry('types', '类型管理', `${activeTypes().length} 个可用类型`)}${settingsEntry('reminder', '提醒设置', state.settings.reminderEnabled ? `每天 ${state.settings.reminderTime}` : '当前已关闭')}${settingsEntry('appearance', '外观设置', state.settings.theme === 'system' ? '跟随系统' : state.settings.theme === 'light' ? '明亮模式' : '暗色模式')}</div>
-    <div class="settings-card">${settingsEntry('backup', '本地备份', '导入或导出 JSON 备份')}${settingsEntry('about', '关于', '导了么 1.0')}</div>
+    <div class="settings-card">${settingsEntry('backup', '本地备份', '导入或导出 JSON 备份')}${settingsEntry('about', '关于', '导了么 1.2')}</div>
   </section>`;
 }
 function settingsHeader(title, caption) { return `<div class="section-heading settings-subhead"><button class="back-button" id="backSettings" aria-label="返回设置">‹</button><div><p class="eyebrow">${caption}</p><h2>${title}</h2></div></div>`; }
@@ -111,7 +111,7 @@ function renderBackupSettings() {
 }
 function renderAboutSettings() {
   return `<section class="page">${settingsHeader('关于', '设置')}
-    <div class="setting-group"><div class="setting-heading">应用信息</div><div class="setting-row"><div class="setting-copy"><strong>应用名称</strong><span>导了么</span></div></div><div class="setting-row"><div class="setting-copy"><strong>作者</strong><span>suger</span></div></div><div class="setting-row"><div class="setting-copy"><strong>版本</strong><span>1.0</span></div></div></div>
+    <div class="setting-group"><div class="setting-heading">应用信息</div><div class="setting-row"><div class="setting-copy"><strong>应用名称</strong><span>导了么</span></div></div><div class="setting-row"><div class="setting-copy"><strong>作者</strong><span>suger</span></div></div><div class="setting-row"><div class="setting-copy"><strong>版本</strong><span>1.2</span></div></div></div>
     <div class="setting-group"><div class="setting-heading">数据说明</div><div class="setting-row"><div class="setting-copy"><strong>本地记录</strong><span>所有记录仅保存在本机，不会上传或同步。</span></div></div></div>
     <div class="setting-group"><div class="setting-heading">联系作者</div><div class="setting-row"><div class="setting-copy"><strong>QQ 2397100743</strong><span>添加时请备注来意</span></div><button class="subtle-action" id="copyContact">复制</button></div></div></section>`;
 }
