@@ -1,0 +1,37 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'cool.dao.leme'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'cool.dao.leme'
+        minSdk 26
+        targetSdk 35
+        versionCode 8
+        versionName '2.3.1'
+        buildConfigField 'String', 'BUILD_TIME', '"' + java.time.ZonedDateTime.now(java.time.ZoneId.of('Asia/Shanghai')).format(java.time.format.DateTimeFormatter.ofPattern('yyyy-MM-dd HH:mm:ss')) + '"'
+    }
+
+    buildFeatures { buildConfig true }
+
+    signingConfigs {
+        release {
+            def storePath = System.getenv('DAO_RELEASE_STORE')
+            if (storePath != null && !storePath.isBlank()) {
+                storeFile file(storePath)
+                storePassword System.getenv('DAO_RELEASE_PASSWORD')
+                keyAlias 'dao-leme-release'
+                keyPassword System.getenv('DAO_RELEASE_PASSWORD')
+                storeType 'PKCS12'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+}
